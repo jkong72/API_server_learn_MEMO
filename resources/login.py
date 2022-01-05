@@ -18,7 +18,7 @@ class UserLoginResource(Resource):
 
             # MySQL
             query = '''select *
-                    from user
+                    from users
                     where email = %s;'''
 
             param = (data['email'], )
