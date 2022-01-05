@@ -17,7 +17,7 @@ class MemoChangeResource(Resource):
             cnx = get_cnx()
 
             query = '''update memos
-                    set title = %s, contents = %s, date = %s,
+                    set title = %s, contents = %s, date = %s
                     where id = %s;'''            
 
             record = (
@@ -42,7 +42,7 @@ class MemoChangeResource(Resource):
             else:
                 print('connection does not exist')
 
-        return {'result':'갱신 되었습니다.'}, HTTPStatus.OK
+        return {'result':'메모의 내용이 성공적으로 갱신 되었습니다.'}, HTTPStatus.OK
     
 
     def delete(self, memo_id):
@@ -65,4 +65,4 @@ class MemoChangeResource(Resource):
                 cursor.close()
                 cnx.close()
                 print('MySQL connection is closed')
-        return {'result' : '레시피 삭제가 정상적으로 동작했습니다.'}, HTTPStatus.OK
+        return {'result' : '메모가 성공적으로 삭제되었습니다.'}, HTTPStatus.OK

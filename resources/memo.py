@@ -83,4 +83,4 @@ class MemoListResource(Resource):
                 cursor.close()  # 커서 닫음
                 cnx.close()     # 연결 닫음
 
-        return {'result': '저장 성공'}, HTTPStatus.OK
+        return {'result': '메모가 작성되었습니다.'}, HTTPStatus.OK
